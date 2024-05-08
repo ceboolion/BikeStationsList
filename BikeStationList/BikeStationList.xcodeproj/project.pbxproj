@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		081993F42BEB6FB40023F4AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081993F32BEB6FB40023F4AE /* AppDelegate.swift */; };
-		081993F62BEB6FB40023F4AE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081993F52BEB6FB40023F4AE /* SceneDelegate.swift */; };
-		081993F82BEB6FB40023F4AE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081993F72BEB6FB40023F4AE /* ViewController.swift */; };
-		081993FB2BEB6FB40023F4AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 081993F92BEB6FB40023F4AE /* Main.storyboard */; };
+		081993F82BEB6FB40023F4AE /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081993F72BEB6FB40023F4AE /* MainController.swift */; };
 		081993FD2BEB6FB70023F4AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 081993FC2BEB6FB70023F4AE /* Assets.xcassets */; };
 		081994002BEB6FB70023F4AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 081993FE2BEB6FB70023F4AE /* LaunchScreen.storyboard */; };
 		0819940B2BEB6FB70023F4AE /* BikeStationListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0819940A2BEB6FB70023F4AE /* BikeStationListTests.swift */; };
@@ -38,9 +36,7 @@
 /* Begin PBXFileReference section */
 		081993F02BEB6FB40023F4AE /* BikeStationList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BikeStationList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		081993F32BEB6FB40023F4AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		081993F52BEB6FB40023F4AE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		081993F72BEB6FB40023F4AE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		081993FA2BEB6FB40023F4AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		081993F72BEB6FB40023F4AE /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		081993FC2BEB6FB70023F4AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		081993FF2BEB6FB70023F4AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		081994012BEB6FB70023F4AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -99,13 +95,8 @@
 		081993F22BEB6FB40023F4AE /* BikeStationList */ = {
 			isa = PBXGroup;
 			children = (
-				081993F32BEB6FB40023F4AE /* AppDelegate.swift */,
-				081993F52BEB6FB40023F4AE /* SceneDelegate.swift */,
-				081993F72BEB6FB40023F4AE /* ViewController.swift */,
-				081993F92BEB6FB40023F4AE /* Main.storyboard */,
-				081993FC2BEB6FB70023F4AE /* Assets.xcassets */,
-				081993FE2BEB6FB70023F4AE /* LaunchScreen.storyboard */,
-				081994012BEB6FB70023F4AE /* Info.plist */,
+				081994242BEB713E0023F4AE /* Presentation */,
+				081994232BEB71300023F4AE /* Resources */,
 			);
 			path = BikeStationList;
 			sourceTree = "<group>";
@@ -125,6 +116,25 @@
 				081994162BEB6FB70023F4AE /* BikeStationListUITestsLaunchTests.swift */,
 			);
 			path = BikeStationListUITests;
+			sourceTree = "<group>";
+		};
+		081994232BEB71300023F4AE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				081993F32BEB6FB40023F4AE /* AppDelegate.swift */,
+				081993FC2BEB6FB70023F4AE /* Assets.xcassets */,
+				081993FE2BEB6FB70023F4AE /* LaunchScreen.storyboard */,
+				081994012BEB6FB70023F4AE /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		081994242BEB713E0023F4AE /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				081993F72BEB6FB40023F4AE /* MainController.swift */,
+			);
+			name = Presentation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +243,6 @@
 			files = (
 				081994002BEB6FB70023F4AE /* LaunchScreen.storyboard in Resources */,
 				081993FD2BEB6FB70023F4AE /* Assets.xcassets in Resources */,
-				081993FB2BEB6FB40023F4AE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +267,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				081993F82BEB6FB40023F4AE /* ViewController.swift in Sources */,
+				081993F82BEB6FB40023F4AE /* MainController.swift in Sources */,
 				081993F42BEB6FB40023F4AE /* AppDelegate.swift in Sources */,
-				081993F62BEB6FB40023F4AE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +305,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		081993F92BEB6FB40023F4AE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				081993FA2BEB6FB40023F4AE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		081993FE2BEB6FB70023F4AE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -447,7 +447,6 @@
 				INFOPLIST_FILE = BikeStationList/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -475,7 +474,6 @@
 				INFOPLIST_FILE = BikeStationList/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
