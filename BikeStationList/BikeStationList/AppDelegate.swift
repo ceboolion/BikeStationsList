@@ -37,8 +37,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func customNavBarAppearance() -> UINavigationBarAppearance {
         let customNavBarAppearance = UINavigationBarAppearance()
         customNavBarAppearance.configureWithOpaqueBackground()
-        customNavBarAppearance.backgroundColor = .systemBackground
-        customNavBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.label]
+        customNavBarAppearance.backgroundColor = .navBarBackground
+        customNavBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
         customNavBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.label]
         let barButtonItemAppearance = UIBarButtonItemAppearance(style: .plain)
         barButtonItemAppearance.normal.titleTextAttributes = [.foregroundColor: UIColor.label]

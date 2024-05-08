@@ -24,11 +24,23 @@ final class MainCoordinator: NSObject, Coordinator {
     //MARK: - PUBLIC METHODS
     func start() {
         let controller = MainController()
-
+        controller.didSendEventClosure = { [weak self] event in
+            guard let self else { return }
+            switch event {
+            case .showMap(let mapData):
+                self.showMapView(with: mapData)
+            }
+        }
         setMainController(with: controller)
     }
     
     //MARK: - PRIVATE METHODS
+    private func showMapView(with mapData: StationListModel) {
+        let controller = UIViewController()
+        controller.view.backgroundColor = .red
+        push(controller)
+    }
+    
     private func setMainController(with controller: UIViewController) {
         navigationController.setViewControllers([controller], animated: false)
     }

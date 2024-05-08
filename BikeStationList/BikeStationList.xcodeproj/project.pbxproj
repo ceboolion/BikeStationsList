@@ -16,6 +16,26 @@
 		081994172BEB6FB70023F4AE /* BikeStationListUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081994162BEB6FB70023F4AE /* BikeStationListUITestsLaunchTests.swift */; };
 		081994272BEB74C80023F4AE /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081994262BEB74C80023F4AE /* Coordinator.swift */; };
 		081994302BEB75D30023F4AE /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0819942F2BEB75D30023F4AE /* MainCoordinator.swift */; };
+		081994332BEB7D500023F4AE /* UITableViewCell+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081994322BEB7D500023F4AE /* UITableViewCell+Ext.swift */; };
+		081994382BEB7E470023F4AE /* StationsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081994372BEB7E470023F4AE /* StationsListView.swift */; };
+		0819943A2BEB7F380023F4AE /* BikeStationViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081994392BEB7F380023F4AE /* BikeStationViewCell.swift */; };
+		0819943D2BEB81BD0023F4AE /* StationInformationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0819943C2BEB81BD0023F4AE /* StationInformationModel.swift */; };
+		081994402BEB83EA0023F4AE /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0819943F2BEB83EA0023F4AE /* NetworkingService.swift */; };
+		081994432BEB84030023F4AE /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081994422BEB84030023F4AE /* NetworkError.swift */; };
+		081994462BEB84F00023F4AE /* BaseServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081994452BEB84F00023F4AE /* BaseServer.swift */; };
+		081994482BEB85740023F4AE /* StationListServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081994472BEB85740023F4AE /* StationListServer.swift */; };
+		0819944A2BEB926D0023F4AE /* StationStatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081994492BEB926D0023F4AE /* StationStatusModel.swift */; };
+		0819944C2BEB941F0023F4AE /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0819944B2BEB941F0023F4AE /* HTTPMethod.swift */; };
+		0819944E2BEB956B0023F4AE /* StationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0819944D2BEB956B0023F4AE /* StationViewModel.swift */; };
+		081994512BEB96270023F4AE /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081994502BEB96270023F4AE /* BaseViewModel.swift */; };
+		081994532BEB9E960023F4AE /* AvailabilityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081994522BEB9E960023F4AE /* AvailabilityView.swift */; };
+		081994562BEB9F6E0023F4AE /* AvailabilityViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081994552BEB9F6E0023F4AE /* AvailabilityViewType.swift */; };
+		081994582BEBA2C40023F4AE /* UIStackView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081994572BEBA2C40023F4AE /* UIStackView+Ext.swift */; };
+		0819945D2BEBA3E00023F4AE /* Manrope-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0819945C2BEBA3E00023F4AE /* Manrope-VariableFont_wght.ttf */; };
+		081994602BEBA4360023F4AE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0819945F2BEBA4360023F4AE /* Constants.swift */; };
+		081994622BEBA83F0023F4AE /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081994612BEBA83F0023F4AE /* Helpers.swift */; };
+		081994662BEBAA3A0023F4AE /* StationListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081994652BEBAA3A0023F4AE /* StationListModel.swift */; };
+		0819946A2BEBDF8C0023F4AE /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081994692BEBDF8C0023F4AE /* UIView+Ext.swift */; };
 		17A18A5A3FFB48CDE4F657A2 /* Pods_BikeStationList_BikeStationListUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C625AD5F90775E95627516A4 /* Pods_BikeStationList_BikeStationListUITests.framework */; };
 		5BDF546CD06B529D92D2792E /* Pods_BikeStationList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53AB1A9D1AFDD7825DFEA65D /* Pods_BikeStationList.framework */; };
 		5EC1DE0DF5BFA79E1ED02291 /* Pods_BikeStationListTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 786AB245755FD1E668119D70 /* Pods_BikeStationListTests.framework */; };
@@ -52,6 +72,26 @@
 		081994162BEB6FB70023F4AE /* BikeStationListUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeStationListUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		081994262BEB74C80023F4AE /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		0819942F2BEB75D30023F4AE /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		081994322BEB7D500023F4AE /* UITableViewCell+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Ext.swift"; sourceTree = "<group>"; };
+		081994372BEB7E470023F4AE /* StationsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsListView.swift; sourceTree = "<group>"; };
+		081994392BEB7F380023F4AE /* BikeStationViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeStationViewCell.swift; sourceTree = "<group>"; };
+		0819943C2BEB81BD0023F4AE /* StationInformationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationInformationModel.swift; sourceTree = "<group>"; };
+		0819943F2BEB83EA0023F4AE /* NetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
+		081994422BEB84030023F4AE /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		081994452BEB84F00023F4AE /* BaseServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseServer.swift; sourceTree = "<group>"; };
+		081994472BEB85740023F4AE /* StationListServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationListServer.swift; sourceTree = "<group>"; };
+		081994492BEB926D0023F4AE /* StationStatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationStatusModel.swift; sourceTree = "<group>"; };
+		0819944B2BEB941F0023F4AE /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		0819944D2BEB956B0023F4AE /* StationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationViewModel.swift; sourceTree = "<group>"; };
+		081994502BEB96270023F4AE /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		081994522BEB9E960023F4AE /* AvailabilityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailabilityView.swift; sourceTree = "<group>"; };
+		081994552BEB9F6E0023F4AE /* AvailabilityViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailabilityViewType.swift; sourceTree = "<group>"; };
+		081994572BEBA2C40023F4AE /* UIStackView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Ext.swift"; sourceTree = "<group>"; };
+		0819945C2BEBA3E00023F4AE /* Manrope-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Manrope-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		0819945F2BEBA4360023F4AE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		081994612BEBA83F0023F4AE /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		081994652BEBAA3A0023F4AE /* StationListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationListModel.swift; sourceTree = "<group>"; };
+		081994692BEBDF8C0023F4AE /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		0B0FBAA8A6C0720C2683BFD9 /* Pods-BikeStationListTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BikeStationListTests.release.xcconfig"; path = "Target Support Files/Pods-BikeStationListTests/Pods-BikeStationListTests.release.xcconfig"; sourceTree = "<group>"; };
 		0EB0FC98F3496AD9E5841272 /* Pods-BikeStationList-BikeStationListUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BikeStationList-BikeStationListUITests.release.xcconfig"; path = "Target Support Files/Pods-BikeStationList-BikeStationListUITests/Pods-BikeStationList-BikeStationListUITests.release.xcconfig"; sourceTree = "<group>"; };
 		1ADE9A0C65A0DB1B94C69C26 /* Pods-BikeStationList-BikeStationListUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BikeStationList-BikeStationListUITests.debug.xcconfig"; path = "Target Support Files/Pods-BikeStationList-BikeStationListUITests/Pods-BikeStationList-BikeStationListUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -116,6 +156,9 @@
 		081993F22BEB6FB40023F4AE /* BikeStationList */ = {
 			isa = PBXGroup;
 			children = (
+				0819945B2BEBA3C20023F4AE /* Utils */,
+				0819943E2BEB83D10023F4AE /* Networking */,
+				081994312BEB7D200023F4AE /* Extensions */,
 				0819942A2BEB755C0023F4AE /* Coordinators */,
 				0819942B2BEB757B0023F4AE /* Presentation */,
 				081994232BEB71300023F4AE /* Resources */,
@@ -163,6 +206,7 @@
 		0819942B2BEB757B0023F4AE /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				0819944F2BEB96170023F4AE /* BaseViewModel */,
 				0819942C2BEB75880023F4AE /* Main */,
 			);
 			path = Presentation;
@@ -171,6 +215,11 @@
 		0819942C2BEB75880023F4AE /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				081994542BEB9F480023F4AE /* Enums */,
+				0819943B2BEB81A90023F4AE /* Model */,
+				081994362BEB7E100023F4AE /* ViewModel */,
+				081994352BEB7E040023F4AE /* Cells */,
+				081994342BEB7DFA0023F4AE /* Views */,
 				081993F72BEB6FB40023F4AE /* MainController.swift */,
 			);
 			path = Main;
@@ -190,6 +239,137 @@
 				0819942F2BEB75D30023F4AE /* MainCoordinator.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		081994312BEB7D200023F4AE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				081994322BEB7D500023F4AE /* UITableViewCell+Ext.swift */,
+				081994572BEBA2C40023F4AE /* UIStackView+Ext.swift */,
+				081994692BEBDF8C0023F4AE /* UIView+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		081994342BEB7DFA0023F4AE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				081994372BEB7E470023F4AE /* StationsListView.swift */,
+				081994522BEB9E960023F4AE /* AvailabilityView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		081994352BEB7E040023F4AE /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				081994392BEB7F380023F4AE /* BikeStationViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		081994362BEB7E100023F4AE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0819944D2BEB956B0023F4AE /* StationViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0819943B2BEB81A90023F4AE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				081994652BEBAA3A0023F4AE /* StationListModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0819943E2BEB83D10023F4AE /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				081994442BEB84E20023F4AE /* Server */,
+				081994412BEB83F70023F4AE /* Enums */,
+				0819943F2BEB83EA0023F4AE /* NetworkingService.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		081994412BEB83F70023F4AE /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				081994422BEB84030023F4AE /* NetworkError.swift */,
+				0819944B2BEB941F0023F4AE /* HTTPMethod.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		081994442BEB84E20023F4AE /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				081994452BEB84F00023F4AE /* BaseServer.swift */,
+				081994632BEBA9C90023F4AE /* StaionListServer */,
+			);
+			path = Server;
+			sourceTree = "<group>";
+		};
+		0819944F2BEB96170023F4AE /* BaseViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				081994502BEB96270023F4AE /* BaseViewModel.swift */,
+			);
+			path = BaseViewModel;
+			sourceTree = "<group>";
+		};
+		081994542BEB9F480023F4AE /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				081994552BEB9F6E0023F4AE /* AvailabilityViewType.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		0819945A2BEBA3B80023F4AE /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				0819945C2BEBA3E00023F4AE /* Manrope-VariableFont_wght.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		0819945B2BEBA3C20023F4AE /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				0819945E2BEBA4230023F4AE /* Constants */,
+				0819945A2BEBA3B80023F4AE /* Fonts */,
+				081994612BEBA83F0023F4AE /* Helpers.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		0819945E2BEBA4230023F4AE /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				0819945F2BEBA4360023F4AE /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		081994632BEBA9C90023F4AE /* StaionListServer */ = {
+			isa = PBXGroup;
+			children = (
+				081994642BEBA9D90023F4AE /* Models */,
+				081994472BEB85740023F4AE /* StationListServer.swift */,
+			);
+			path = StaionListServer;
+			sourceTree = "<group>";
+		};
+		081994642BEBA9D90023F4AE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0819943C2BEB81BD0023F4AE /* StationInformationModel.swift */,
+				081994492BEB926D0023F4AE /* StationStatusModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		A86AEEAF7655748F5C72796C /* Pods */ = {
@@ -326,6 +506,7 @@
 			files = (
 				081994002BEB6FB70023F4AE /* LaunchScreen.storyboard in Resources */,
 				081993FD2BEB6FB70023F4AE /* Assets.xcassets in Resources */,
+				0819945D2BEBA3E00023F4AE /* Manrope-VariableFont_wght.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,10 +634,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				081994582BEBA2C40023F4AE /* UIStackView+Ext.swift in Sources */,
+				081994622BEBA83F0023F4AE /* Helpers.swift in Sources */,
+				0819944E2BEB956B0023F4AE /* StationViewModel.swift in Sources */,
+				0819943D2BEB81BD0023F4AE /* StationInformationModel.swift in Sources */,
+				081994532BEB9E960023F4AE /* AvailabilityView.swift in Sources */,
+				081994562BEB9F6E0023F4AE /* AvailabilityViewType.swift in Sources */,
+				0819943A2BEB7F380023F4AE /* BikeStationViewCell.swift in Sources */,
+				0819944C2BEB941F0023F4AE /* HTTPMethod.swift in Sources */,
+				081994332BEB7D500023F4AE /* UITableViewCell+Ext.swift in Sources */,
+				081994512BEB96270023F4AE /* BaseViewModel.swift in Sources */,
+				0819944A2BEB926D0023F4AE /* StationStatusModel.swift in Sources */,
+				081994482BEB85740023F4AE /* StationListServer.swift in Sources */,
+				0819946A2BEBDF8C0023F4AE /* UIView+Ext.swift in Sources */,
+				081994662BEBAA3A0023F4AE /* StationListModel.swift in Sources */,
+				081994402BEB83EA0023F4AE /* NetworkingService.swift in Sources */,
 				081993F82BEB6FB40023F4AE /* MainController.swift in Sources */,
 				081994302BEB75D30023F4AE /* MainCoordinator.swift in Sources */,
 				081993F42BEB6FB40023F4AE /* AppDelegate.swift in Sources */,
+				081994602BEBA4360023F4AE /* Constants.swift in Sources */,
 				081994272BEB74C80023F4AE /* Coordinator.swift in Sources */,
+				081994382BEB7E470023F4AE /* StationsListView.swift in Sources */,
+				081994462BEB84F00023F4AE /* BaseServer.swift in Sources */,
+				081994432BEB84030023F4AE /* NetworkError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
