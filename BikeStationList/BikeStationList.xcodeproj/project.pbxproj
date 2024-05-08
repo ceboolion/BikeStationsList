@@ -14,6 +14,8 @@
 		0819940B2BEB6FB70023F4AE /* BikeStationListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0819940A2BEB6FB70023F4AE /* BikeStationListTests.swift */; };
 		081994152BEB6FB70023F4AE /* BikeStationListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081994142BEB6FB70023F4AE /* BikeStationListUITests.swift */; };
 		081994172BEB6FB70023F4AE /* BikeStationListUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081994162BEB6FB70023F4AE /* BikeStationListUITestsLaunchTests.swift */; };
+		081994272BEB74C80023F4AE /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081994262BEB74C80023F4AE /* Coordinator.swift */; };
+		081994302BEB75D30023F4AE /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0819942F2BEB75D30023F4AE /* MainCoordinator.swift */; };
 		17A18A5A3FFB48CDE4F657A2 /* Pods_BikeStationList_BikeStationListUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C625AD5F90775E95627516A4 /* Pods_BikeStationList_BikeStationListUITests.framework */; };
 		5BDF546CD06B529D92D2792E /* Pods_BikeStationList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53AB1A9D1AFDD7825DFEA65D /* Pods_BikeStationList.framework */; };
 		5EC1DE0DF5BFA79E1ED02291 /* Pods_BikeStationListTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 786AB245755FD1E668119D70 /* Pods_BikeStationListTests.framework */; };
@@ -48,6 +50,8 @@
 		081994102BEB6FB70023F4AE /* BikeStationListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BikeStationListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		081994142BEB6FB70023F4AE /* BikeStationListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeStationListUITests.swift; sourceTree = "<group>"; };
 		081994162BEB6FB70023F4AE /* BikeStationListUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeStationListUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		081994262BEB74C80023F4AE /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		0819942F2BEB75D30023F4AE /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		0B0FBAA8A6C0720C2683BFD9 /* Pods-BikeStationListTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BikeStationListTests.release.xcconfig"; path = "Target Support Files/Pods-BikeStationListTests/Pods-BikeStationListTests.release.xcconfig"; sourceTree = "<group>"; };
 		0EB0FC98F3496AD9E5841272 /* Pods-BikeStationList-BikeStationListUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BikeStationList-BikeStationListUITests.release.xcconfig"; path = "Target Support Files/Pods-BikeStationList-BikeStationListUITests/Pods-BikeStationList-BikeStationListUITests.release.xcconfig"; sourceTree = "<group>"; };
 		1ADE9A0C65A0DB1B94C69C26 /* Pods-BikeStationList-BikeStationListUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BikeStationList-BikeStationListUITests.debug.xcconfig"; path = "Target Support Files/Pods-BikeStationList-BikeStationListUITests/Pods-BikeStationList-BikeStationListUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -112,7 +116,8 @@
 		081993F22BEB6FB40023F4AE /* BikeStationList */ = {
 			isa = PBXGroup;
 			children = (
-				081994242BEB713E0023F4AE /* Presentation */,
+				0819942A2BEB755C0023F4AE /* Coordinators */,
+				0819942B2BEB757B0023F4AE /* Presentation */,
 				081994232BEB71300023F4AE /* Resources */,
 			);
 			path = BikeStationList;
@@ -146,12 +151,45 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		081994242BEB713E0023F4AE /* Presentation */ = {
+		0819942A2BEB755C0023F4AE /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				0819942D2BEB759A0023F4AE /* Base */,
+				0819942E2BEB75AF0023F4AE /* Main */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		0819942B2BEB757B0023F4AE /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				0819942C2BEB75880023F4AE /* Main */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		0819942C2BEB75880023F4AE /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				081993F72BEB6FB40023F4AE /* MainController.swift */,
 			);
-			name = Presentation;
+			path = Main;
+			sourceTree = "<group>";
+		};
+		0819942D2BEB759A0023F4AE /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				081994262BEB74C80023F4AE /* Coordinator.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		0819942E2BEB75AF0023F4AE /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				0819942F2BEB75D30023F4AE /* MainCoordinator.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		A86AEEAF7655748F5C72796C /* Pods */ = {
@@ -416,7 +454,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				081993F82BEB6FB40023F4AE /* MainController.swift in Sources */,
+				081994302BEB75D30023F4AE /* MainCoordinator.swift in Sources */,
 				081993F42BEB6FB40023F4AE /* AppDelegate.swift in Sources */,
+				081994272BEB74C80023F4AE /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -595,6 +635,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WKZW55ZWGS;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BikeStationList/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -624,6 +665,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WKZW55ZWGS;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BikeStationList/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
