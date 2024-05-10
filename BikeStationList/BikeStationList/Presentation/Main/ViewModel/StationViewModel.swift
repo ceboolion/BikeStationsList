@@ -53,7 +53,7 @@ final class StationViewModel: BaseViewModel {
                 }
             }, onError: { [weak self] error in
                 self?.isDataLoading.accept(false)
-                print("WRC error: \(error)")
+                print("error: \(error.localizedDescription)")
             })
             .disposed(by: disposeBag)
     }
