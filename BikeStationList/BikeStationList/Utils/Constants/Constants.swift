@@ -5,8 +5,9 @@
 //  Created by Ceboolion on 08/05/2024.
 //
 
-import Foundation
+import UIKit
 
+// MARK: - FONTS
 struct CustomFonts {
     static let manropeRegular = "Manrope-Regular"
     static let manropeExtraLight = "Manrope-ExtraLight"
@@ -16,6 +17,16 @@ struct CustomFonts {
     static let manropeExtraBold = "Manrope-ExtraBold"
 }
 
+// MARK: - PROPERTIES
 struct CustomProperties {
     static let defaultPadding: CGFloat = 16.0
+}
+
+// MARK: IMAGES
+struct CustomImages {
+    static let infoImage = UIImage(systemName: "info.circle.fill",
+                             withConfiguration:
+                               UIImage.SymbolConfiguration(weight: .regular))?.applyingSymbolConfiguration(UIImage.SymbolConfiguration(paletteColors: [
+                                   .white,
+                                   .accent]))
 }

@@ -8,13 +8,17 @@
 import UIKit
 import RxSwift
 import SnapKit
+import CoreLocation
 
 class StationsListView: UIView {
     
+    //MARK: - PUBLIC PROPERTIES
+    var didSendEventClosure: ((Event)->Void)?
     var cellDidTappedClosure: ((StationListModel)->Void)?
     
     //MARK: - PRIVATE PROPERTIES
     private var viewModel: StationViewModel!
+    private var locationManager: CLLocationManager!
     private var tableView: UITableView!
     private var spinnerView: UIActivityIndicatorView!
     private let padding: CGFloat = CustomProperties.defaultPadding
@@ -31,10 +35,18 @@ class StationsListView: UIView {
     
     //MARK: - PRIVATE METHODS
     private func setup() {
+        configureLocationManager()
         configureTableView()
         configureSpinnerView()
         setupObservers()
         configureConstraints()
+    }
+    
+    private func configureLocationManager() {
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestLocation()
     }
     
     private func configureTableView() {
@@ -87,6 +99,7 @@ class StationsListView: UIView {
             .bind { [weak self] row in
                 guard let data = self?.viewModel.stationListData.value[row] else { return }
                 self?.cellDidTappedClosure?(data)
+                self?.didSendEventClosure?(.showMap(data))
             }
             .disposed(by: viewModel.disposeBag)
     }
@@ -97,4 +110,39 @@ class StationsListView: UIView {
             .disposed(by: viewModel.disposeBag)
     }
     
+}
+
+//MARK: - EXTENSIONS
+extension StationsListView: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {}
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {}
+    
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        checkLocationAuthorization(manager: manager)
+    }
+    
+    private func checkLocationAuthorization(manager: CLLocationManager) {
+        switch manager.authorizationStatus {
+        case .authorizedAlways, .authorizedWhenInUse:
+            guard let userLocation = manager.location else { return }
+            viewModel.userLocation = userLocation
+        case .notDetermined:
+            print("location notDetermined")
+        case .restricted, .denied:
+            didSendEventClosure?(.showAuthorizationAlert)
+            print("alert unable to get location")
+        @unknown default:
+            print("alert unable to get location")
+        }
+    }
+    
+}
+
+extension StationsListView {
+    enum Event {
+        case showMap(StationListModel)
+        case showAuthorizationAlert
+    }
 }

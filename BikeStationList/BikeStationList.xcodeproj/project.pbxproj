@@ -36,6 +36,15 @@
 		081994622BEBA83F0023F4AE /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081994612BEBA83F0023F4AE /* Helpers.swift */; };
 		081994662BEBAA3A0023F4AE /* StationListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081994652BEBAA3A0023F4AE /* StationListModel.swift */; };
 		0819946A2BEBDF8C0023F4AE /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081994692BEBDF8C0023F4AE /* UIView+Ext.swift */; };
+		0819946D2BECA15D0023F4AE /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0819946C2BECA15D0023F4AE /* MapController.swift */; };
+		081994702BECB51F0023F4AE /* PlaceInformationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0819946F2BECB51F0023F4AE /* PlaceInformationController.swift */; };
+		081994722BECBF710023F4AE /* BikeStationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081994712BECBF710023F4AE /* BikeStationView.swift */; };
+		081994752BECCD2C0023F4AE /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081994742BECCD2C0023F4AE /* MapViewModel.swift */; };
+		0819947A2BECE3F30023F4AE /* CLLocation+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081994792BECE3F30023F4AE /* CLLocation+Ext.swift */; };
+		0819947C2BECFA810023F4AE /* CustomAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0819947B2BECFA810023F4AE /* CustomAnnotationView.swift */; };
+		087B09542BEE0E1300A07ED8 /* NSMutableAttributedString+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087B09532BEE0E1300A07ED8 /* NSMutableAttributedString+Ext.swift */; };
+		08E0ED622BED049700DF9EF7 /* PinMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E0ED612BED049700DF9EF7 /* PinMapView.swift */; };
+		08E0ED862BED630900DF9EF7 /* MainMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E0ED852BED630900DF9EF7 /* MainMapView.swift */; };
 		17A18A5A3FFB48CDE4F657A2 /* Pods_BikeStationList_BikeStationListUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C625AD5F90775E95627516A4 /* Pods_BikeStationList_BikeStationListUITests.framework */; };
 		5BDF546CD06B529D92D2792E /* Pods_BikeStationList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53AB1A9D1AFDD7825DFEA65D /* Pods_BikeStationList.framework */; };
 		5EC1DE0DF5BFA79E1ED02291 /* Pods_BikeStationListTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 786AB245755FD1E668119D70 /* Pods_BikeStationListTests.framework */; };
@@ -92,6 +101,15 @@
 		081994612BEBA83F0023F4AE /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		081994652BEBAA3A0023F4AE /* StationListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationListModel.swift; sourceTree = "<group>"; };
 		081994692BEBDF8C0023F4AE /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
+		0819946C2BECA15D0023F4AE /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
+		0819946F2BECB51F0023F4AE /* PlaceInformationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceInformationController.swift; sourceTree = "<group>"; };
+		081994712BECBF710023F4AE /* BikeStationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeStationView.swift; sourceTree = "<group>"; };
+		081994742BECCD2C0023F4AE /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		081994792BECE3F30023F4AE /* CLLocation+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocation+Ext.swift"; sourceTree = "<group>"; };
+		0819947B2BECFA810023F4AE /* CustomAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotationView.swift; sourceTree = "<group>"; };
+		087B09532BEE0E1300A07ED8 /* NSMutableAttributedString+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+Ext.swift"; sourceTree = "<group>"; };
+		08E0ED612BED049700DF9EF7 /* PinMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinMapView.swift; sourceTree = "<group>"; };
+		08E0ED852BED630900DF9EF7 /* MainMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapView.swift; sourceTree = "<group>"; };
 		0B0FBAA8A6C0720C2683BFD9 /* Pods-BikeStationListTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BikeStationListTests.release.xcconfig"; path = "Target Support Files/Pods-BikeStationListTests/Pods-BikeStationListTests.release.xcconfig"; sourceTree = "<group>"; };
 		0EB0FC98F3496AD9E5841272 /* Pods-BikeStationList-BikeStationListUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BikeStationList-BikeStationListUITests.release.xcconfig"; path = "Target Support Files/Pods-BikeStationList-BikeStationListUITests/Pods-BikeStationList-BikeStationListUITests.release.xcconfig"; sourceTree = "<group>"; };
 		1ADE9A0C65A0DB1B94C69C26 /* Pods-BikeStationList-BikeStationListUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BikeStationList-BikeStationListUITests.debug.xcconfig"; path = "Target Support Files/Pods-BikeStationList-BikeStationListUITests/Pods-BikeStationList-BikeStationListUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -206,8 +224,10 @@
 		0819942B2BEB757B0023F4AE /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				0819946E2BECB50A0023F4AE /* PlaceInfo */,
 				0819944F2BEB96170023F4AE /* BaseViewModel */,
 				0819942C2BEB75880023F4AE /* Main */,
+				0819946B2BECA1400023F4AE /* Map */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -247,6 +267,8 @@
 				081994322BEB7D500023F4AE /* UITableViewCell+Ext.swift */,
 				081994572BEBA2C40023F4AE /* UIStackView+Ext.swift */,
 				081994692BEBDF8C0023F4AE /* UIView+Ext.swift */,
+				081994792BECE3F30023F4AE /* CLLocation+Ext.swift */,
+				087B09532BEE0E1300A07ED8 /* NSMutableAttributedString+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -256,6 +278,7 @@
 			children = (
 				081994372BEB7E470023F4AE /* StationsListView.swift */,
 				081994522BEB9E960023F4AE /* AvailabilityView.swift */,
+				081994712BECBF710023F4AE /* BikeStationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -370,6 +393,42 @@
 				081994492BEB926D0023F4AE /* StationStatusModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		0819946B2BECA1400023F4AE /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				081994732BECCD170023F4AE /* ViewModel */,
+				081994762BECE0AE0023F4AE /* Views */,
+				0819946C2BECA15D0023F4AE /* MapController.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		0819946E2BECB50A0023F4AE /* PlaceInfo */ = {
+			isa = PBXGroup;
+			children = (
+				0819946F2BECB51F0023F4AE /* PlaceInformationController.swift */,
+			);
+			path = PlaceInfo;
+			sourceTree = "<group>";
+		};
+		081994732BECCD170023F4AE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				081994742BECCD2C0023F4AE /* MapViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		081994762BECE0AE0023F4AE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0819947B2BECFA810023F4AE /* CustomAnnotationView.swift */,
+				08E0ED612BED049700DF9EF7 /* PinMapView.swift */,
+				08E0ED852BED630900DF9EF7 /* MainMapView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		A86AEEAF7655748F5C72796C /* Pods */ = {
@@ -635,8 +694,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				081994582BEBA2C40023F4AE /* UIStackView+Ext.swift in Sources */,
+				08E0ED862BED630900DF9EF7 /* MainMapView.swift in Sources */,
 				081994622BEBA83F0023F4AE /* Helpers.swift in Sources */,
 				0819944E2BEB956B0023F4AE /* StationViewModel.swift in Sources */,
+				081994702BECB51F0023F4AE /* PlaceInformationController.swift in Sources */,
 				0819943D2BEB81BD0023F4AE /* StationInformationModel.swift in Sources */,
 				081994532BEB9E960023F4AE /* AvailabilityView.swift in Sources */,
 				081994562BEB9F6E0023F4AE /* AvailabilityViewType.swift in Sources */,
@@ -646,10 +707,16 @@
 				081994512BEB96270023F4AE /* BaseViewModel.swift in Sources */,
 				0819944A2BEB926D0023F4AE /* StationStatusModel.swift in Sources */,
 				081994482BEB85740023F4AE /* StationListServer.swift in Sources */,
+				087B09542BEE0E1300A07ED8 /* NSMutableAttributedString+Ext.swift in Sources */,
 				0819946A2BEBDF8C0023F4AE /* UIView+Ext.swift in Sources */,
+				08E0ED622BED049700DF9EF7 /* PinMapView.swift in Sources */,
+				081994722BECBF710023F4AE /* BikeStationView.swift in Sources */,
 				081994662BEBAA3A0023F4AE /* StationListModel.swift in Sources */,
+				0819947C2BECFA810023F4AE /* CustomAnnotationView.swift in Sources */,
 				081994402BEB83EA0023F4AE /* NetworkingService.swift in Sources */,
 				081993F82BEB6FB40023F4AE /* MainController.swift in Sources */,
+				0819946D2BECA15D0023F4AE /* MapController.swift in Sources */,
+				0819947A2BECE3F30023F4AE /* CLLocation+Ext.swift in Sources */,
 				081994302BEB75D30023F4AE /* MainCoordinator.swift in Sources */,
 				081993F42BEB6FB40023F4AE /* AppDelegate.swift in Sources */,
 				081994602BEBA4360023F4AE /* Constants.swift in Sources */,
@@ -657,6 +724,7 @@
 				081994382BEB7E470023F4AE /* StationsListView.swift in Sources */,
 				081994462BEB84F00023F4AE /* BaseServer.swift in Sources */,
 				081994432BEB84030023F4AE /* NetworkError.swift in Sources */,
+				081994752BECCD2C0023F4AE /* MapViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

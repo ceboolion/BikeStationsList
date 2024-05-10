@@ -8,11 +8,17 @@
 import Foundation
 
 struct StationListModel {
-    let stationId: String
-    let placeName: String
-    let placeAddress: String
-    let vehiclesAvailability: String
-    let placesAvailability: String
-    let lat: Double
-    let lon: Double
+    var stationId: String
+    var placeName: String
+    var placeAddress: String
+    var vehiclesAvailability: String
+    var placesAvailability: String
+    var lat: Double
+    var lon: Double
+    var distance: Double?
+    var distanceFromUser: String?
+    
+    func getDataWithDistance(distanceString: String, distance: Double = 0.0) -> StationListModel {
+        StationListModel(stationId: stationId, placeName: placeName, placeAddress: placeAddress, vehiclesAvailability: vehiclesAvailability, placesAvailability: placesAvailability, lat: lat, lon: lon, distance: distance, distanceFromUser: distanceString)
+    }
 }

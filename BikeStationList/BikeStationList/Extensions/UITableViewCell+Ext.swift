@@ -11,10 +11,4 @@ extension UITableViewCell {
     static var reuseIdentifier: String {
         String(describing: self)
     }
-    
-//    func addSubviews(_ views: UIView...) {
-//        for view in views {
-//            contentView.addSubview(view)
-//        }
-//    }
 }

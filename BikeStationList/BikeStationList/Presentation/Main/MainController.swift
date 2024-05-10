@@ -35,9 +35,14 @@ class MainController: UIViewController {
     
     private func configureStationsListView() {
         stationsListView = StationsListView(viewModel: StationViewModel())
-        stationsListView.cellDidTappedClosure = { [weak self] data in
+        stationsListView.didSendEventClosure = { [weak self] event in
             guard let self else { return }
-            self.didSendEventClosure?(.showMap(data))
+            switch event {
+            case .showMap(let data):
+                self.didSendEventClosure?(.showMap(data))
+            case .showAuthorizationAlert:
+                self.didSendEventClosure?(.showAuthorizationAlert)
+            }
         }
     }
     
@@ -56,6 +61,7 @@ class MainController: UIViewController {
 extension MainController {
     enum Event {
         case showMap(StationListModel)
+        case showAuthorizationAlert
     }
 }
 

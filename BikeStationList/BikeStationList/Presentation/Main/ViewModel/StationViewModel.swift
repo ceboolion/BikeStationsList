@@ -8,6 +8,7 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import CoreLocation
 
 final class StationViewModel: BaseViewModel {
     
@@ -16,6 +17,13 @@ final class StationViewModel: BaseViewModel {
     
     //MARK: - PUBLIC PROPERTIES
     let stationListData: BehaviorRelay<[StationListModel]> = BehaviorRelay(value: [])
+    var userLocation: CLLocation? {
+        didSet {
+            if let userLocation, !stationListData.value.isEmpty {
+                setDistanceForEachStation(for: userLocation)
+            }
+        }
+    }
     var isSpinnerHiddenDriver: Driver<Bool> {
         isDataLoading
             .map { !$0 }
@@ -28,7 +36,6 @@ final class StationViewModel: BaseViewModel {
     override init() {
         super.init()
         getStationData()
-        stationListData.accept(dummyData)
     }
     
     private func getStationData() {
@@ -40,8 +47,10 @@ final class StationViewModel: BaseViewModel {
                  stationListServer.getStationsList(urlString: stationListDataUrl))
             .subscribe(onNext: { [weak self] statusData, listData in
                 self?.isDataLoading.accept(false)
-                print("WRC statusData: \(statusData), stations.count: \(statusData.data?.stations?.count)")
-                print("WRC listData: \(listData), stations.count: \(listData.data?.stations?.count)")
+                self?.setDataList(with: statusData, stationListData: listData)
+                if let userLocation = self?.userLocation {
+                    self?.setDistanceForEachStation(for: userLocation)
+                }
             }, onError: { [weak self] error in
                 self?.isDataLoading.accept(false)
                 print("WRC error: \(error)")
@@ -49,17 +58,43 @@ final class StationViewModel: BaseViewModel {
             .disposed(by: disposeBag)
     }
     
+    private func setDataList(with statusData: StationStatusModel, stationListData: StationInformationModel) {
+        var listData = [StationListModel]()
+        stationListData.data?.stations?.forEach({ data in
+            listData.append(StationListModel(stationId: data.stationId ?? "",
+                                             placeName: data.name ?? "",
+                                             placeAddress: data.address ?? "",
+                                             vehiclesAvailability: "",
+                                             placesAvailability: "",
+                                             lat: data.lat ?? 0.0,
+                                             lon: data.lon ?? 0.0))
+        })
+        
+        statusData.data?.stations?.forEach({ statusData in
+            if let index = listData.firstIndex(where: {$0.stationId == statusData.stationId}) {
+                listData[index].vehiclesAvailability = statusData.numVehiclesAvailable?.description ?? ""
+                listData[index].placesAvailability = statusData.numDocksAvailable?.description ?? ""
+            }
+        })
+        self.stationListData.accept(listData)
+    }
+    
+    func setDistanceForEachStation(for userLocalization: CLLocation) {
+        var data = [StationListModel]()
+        stationListData.value.forEach { model in
+            let distance = calculateDistance(from: userLocalization, to: CLLocation(latitude: model.lat, longitude: model.lon))
+            let formattedDistance = formatDistance(with: distance)
+            let placeData = model.getDataWithDistance(distanceString: formattedDistance, distance: Double(distance))
+            data.append(placeData)
+        }
+        let sortedData = sortStationList(for: data)
+        stationListData.accept(sortedData)
+    }
+    
+    private func sortStationList(for data: [StationListModel]) -> [StationListModel] {
+        var sortedData = data
+        sortedData.sort(by: { ($0.distance ?? 0.0) < ($1.distance ?? 0.0) })
+        return sortedData
+    }
+    
 }
-
-let dummyData: [StationListModel] = [
-    StationListModel(stationId: "4971", placeName: "GDA370", placeAddress: "Lawendowe wzgórze", vehiclesAvailability: "0", placesAvailability: "10", lat: 54.3272251, lon: 18.5602068),
-    StationListModel(stationId: "4972", placeName: "GDA371", placeAddress: "GDA371 Address", vehiclesAvailability: "2", placesAvailability: "8", lat: 54.3272252, lon: 18.5602069),
-    StationListModel(stationId: "4973", placeName: "GDA372", placeAddress: "GDA372 Address", vehiclesAvailability: "5", placesAvailability: "5", lat: 54.3272253, lon: 18.5602070),
-    StationListModel(stationId: "4974", placeName: "GDA373", placeAddress: "GDA373 Address", vehiclesAvailability: "8", placesAvailability: "2", lat: 54.3272254, lon: 18.5602071),
-    StationListModel(stationId: "4975", placeName: "GDA374", placeAddress: "GDA374 Address", vehiclesAvailability: "10", placesAvailability: "0", lat: 54.3272255, lon: 18.5602072),
-    StationListModel(stationId: "4976", placeName: "GDA375", placeAddress: "GDA375 Address", vehiclesAvailability: "3", placesAvailability: "7", lat: 54.3272256, lon: 18.5602073),
-    StationListModel(stationId: "4977", placeName: "GDA376", placeAddress: "GDA376 Address", vehiclesAvailability: "6", placesAvailability: "4", lat: 54.3272257, lon: 18.5602074),
-    StationListModel(stationId: "4978", placeName: "GDA377", placeAddress: "GDA377 Address", vehiclesAvailability: "9", placesAvailability: "1", lat: 54.3272258, lon: 18.5602075),
-    StationListModel(stationId: "4979", placeName: "GDA378", placeAddress: "GDA378 Address", vehiclesAvailability: "1", placesAvailability: "9", lat: 54.3272259, lon: 18.5602076),
-    StationListModel(stationId: "4980", placeName: "GDA379", placeAddress: "GDA379 Address", vehiclesAvailability: "4", placesAvailability: "6", lat: 54.3272260, lon: 18.5602077)
-]
