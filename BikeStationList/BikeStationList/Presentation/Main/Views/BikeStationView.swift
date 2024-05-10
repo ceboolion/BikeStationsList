@@ -10,6 +10,7 @@ import UIKit
 class BikeStationView: UIView {
     
     //MARK: - PRIVATE PROPERTIES
+    private let viewModel = BikeStationViewModel()
     private var stationNameLabel: UILabel!
     private var addressLabel: UILabel!
     private var vehicleView: AvailabilityView!
@@ -110,7 +111,7 @@ class BikeStationView: UIView {
     }
     
     private func setAddressLabel(text: String, distance: String) {
-        addressLabel.attributedText = getAttributedText(for: distance, addressText: text)
+        addressLabel.attributedText = viewModel.getAttributedText(for: distance, addressText: text)
     }
     
     private func setVehicleView(availabilityNumber: String) {
@@ -119,29 +120,6 @@ class BikeStationView: UIView {
     
     private func setPlacesView(availabilityNumber: String) {
         placeView.setupView(viewType: .place, availabilityNumber: availabilityNumber)
-    }
-    
-    private func getAttributedText(for distance: String, addressText: String) -> NSAttributedString {
-        var finalText = NSMutableAttributedString()
-        let boldFontAttribute: [NSAttributedString.Key: Any] = [
-            .font: UIFont(name: CustomFonts.manropeBold, size: 12)!,
-            .foregroundColor: UIColor.primaryBlack
-        ]
-        let regularFontAttribute: [NSAttributedString.Key: Any] = [
-            .font: UIFont(name: CustomFonts.manropeRegular, size: 12)!,
-            .foregroundColor: UIColor.primaryBlack
-        ]
-        let distanceToStation = NSMutableAttributedString(string: distance, attributes: boldFontAttribute)
-        let spacerDot = NSMutableAttributedString(string: " · ", attributes: regularFontAttribute)
-        let address = NSMutableAttributedString(string: addressText, attributes: regularFontAttribute)
-        
-        if distance == "" {
-            return address
-        } else {
-            
-        }
-        finalText.addTexts(distanceToStation, spacerDot, address)
-        return finalText
     }
     
     

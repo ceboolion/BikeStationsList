@@ -25,6 +25,7 @@ class AvailabilityView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //MARK: - PUBLIC METHODS
     func setupView(viewType: AvailabilityViewType, availabilityNumber: String) {
         setImageView(image: viewType.image)
         setAvailabilityNumberLabel(text: availabilityNumber, viewType: viewType)

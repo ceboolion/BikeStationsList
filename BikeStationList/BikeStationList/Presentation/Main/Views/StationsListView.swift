@@ -23,6 +23,7 @@ class StationsListView: UIView {
     private var spinnerView: UIActivityIndicatorView!
     private let padding: CGFloat = CustomProperties.defaultPadding
     
+    // MARK: - INIT
     init(viewModel: StationViewModel) {
         super.init(frame: .zero)
         self.viewModel = viewModel
@@ -109,6 +110,7 @@ class StationsListView: UIView {
             .drive(spinnerView.rx.isHidden)
             .disposed(by: viewModel.disposeBag)
     }
+    
     
 }
 

@@ -8,7 +8,4 @@
 import UIKit
 import CoreLocation
 
-final class MapViewModel: BaseViewModel {
-    
-    
-}
+final class MapViewModel: BaseViewModel {}

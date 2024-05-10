@@ -42,6 +42,7 @@
 		081994752BECCD2C0023F4AE /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081994742BECCD2C0023F4AE /* MapViewModel.swift */; };
 		0819947A2BECE3F30023F4AE /* CLLocation+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081994792BECE3F30023F4AE /* CLLocation+Ext.swift */; };
 		0819947C2BECFA810023F4AE /* CustomAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0819947B2BECFA810023F4AE /* CustomAnnotationView.swift */; };
+		084B637E2BEEAD4700CE5166 /* BikeStationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084B637D2BEEAD4700CE5166 /* BikeStationViewModel.swift */; };
 		087B09542BEE0E1300A07ED8 /* NSMutableAttributedString+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087B09532BEE0E1300A07ED8 /* NSMutableAttributedString+Ext.swift */; };
 		08E0ED622BED049700DF9EF7 /* PinMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E0ED612BED049700DF9EF7 /* PinMapView.swift */; };
 		08E0ED862BED630900DF9EF7 /* MainMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E0ED852BED630900DF9EF7 /* MainMapView.swift */; };
@@ -107,6 +108,7 @@
 		081994742BECCD2C0023F4AE /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		081994792BECE3F30023F4AE /* CLLocation+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocation+Ext.swift"; sourceTree = "<group>"; };
 		0819947B2BECFA810023F4AE /* CustomAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotationView.swift; sourceTree = "<group>"; };
+		084B637D2BEEAD4700CE5166 /* BikeStationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeStationViewModel.swift; sourceTree = "<group>"; };
 		087B09532BEE0E1300A07ED8 /* NSMutableAttributedString+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+Ext.swift"; sourceTree = "<group>"; };
 		08E0ED612BED049700DF9EF7 /* PinMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinMapView.swift; sourceTree = "<group>"; };
 		08E0ED852BED630900DF9EF7 /* MainMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapView.swift; sourceTree = "<group>"; };
@@ -295,6 +297,7 @@
 			isa = PBXGroup;
 			children = (
 				0819944D2BEB956B0023F4AE /* StationViewModel.swift */,
+				084B637D2BEEAD4700CE5166 /* BikeStationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -706,6 +709,7 @@
 				081994332BEB7D500023F4AE /* UITableViewCell+Ext.swift in Sources */,
 				081994512BEB96270023F4AE /* BaseViewModel.swift in Sources */,
 				0819944A2BEB926D0023F4AE /* StationStatusModel.swift in Sources */,
+				084B637E2BEEAD4700CE5166 /* BikeStationViewModel.swift in Sources */,
 				081994482BEB85740023F4AE /* StationListServer.swift in Sources */,
 				087B09542BEE0E1300A07ED8 /* NSMutableAttributedString+Ext.swift in Sources */,
 				0819946A2BEBDF8C0023F4AE /* UIView+Ext.swift in Sources */,

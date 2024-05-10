@@ -14,6 +14,7 @@ final class StationViewModel: BaseViewModel {
     
     //MARK: - PRIVATE PROPERTIES
     private let isDataLoading: BehaviorRelay<Bool> = BehaviorRelay(value: false)
+    private let stationListServer = StationListServer()
     
     //MARK: - PUBLIC PROPERTIES
     let stationListData: BehaviorRelay<[StationListModel]> = BehaviorRelay(value: [])
@@ -30,14 +31,13 @@ final class StationViewModel: BaseViewModel {
             .asDriver(onErrorJustReturn: true)
     }
     
-    //MARK: - PRIVATE PROPERTIES
-    private let stationListServer = StationListServer()
-    
+    //MARK: - INIT
     override init() {
         super.init()
         getStationData()
     }
     
+    //MARK: - PRIVATE METHODS
     private func getStationData() {
         isDataLoading.accept(true)
         let stationStatusDataUrl = "https://gbfs.urbansharing.com/rowermevo.pl/station_status.json"
@@ -79,7 +79,7 @@ final class StationViewModel: BaseViewModel {
         self.stationListData.accept(listData)
     }
     
-    func setDistanceForEachStation(for userLocalization: CLLocation) {
+    private func setDistanceForEachStation(for userLocalization: CLLocation) {
         var data = [StationListModel]()
         stationListData.value.forEach { model in
             let distance = calculateDistance(from: userLocalization, to: CLLocation(latitude: model.lat, longitude: model.lon))
@@ -96,5 +96,6 @@ final class StationViewModel: BaseViewModel {
         sortedData.sort(by: { ($0.distance ?? 0.0) < ($1.distance ?? 0.0) })
         return sortedData
     }
+    
     
 }
