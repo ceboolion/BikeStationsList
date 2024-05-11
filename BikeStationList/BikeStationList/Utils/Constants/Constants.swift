@@ -29,4 +29,6 @@ struct CustomImages {
                                UIImage.SymbolConfiguration(weight: .regular))?.applyingSymbolConfiguration(UIImage.SymbolConfiguration(paletteColors: [
                                    .white,
                                    .accent]))
+    
+    static let bicycleImage = UIImage(systemName: "bicycle")?.withConfiguration(UIImage.SymbolConfiguration(font: .systemFont(ofSize: 15, weight: .regular))).withTintColor(.primaryBlack).withRenderingMode(.alwaysOriginal)
 }

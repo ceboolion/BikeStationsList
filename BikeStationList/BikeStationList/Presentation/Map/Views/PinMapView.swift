@@ -49,8 +49,7 @@ class PinMapView: UIView {
     
     private func configureIconImageView() {
         iconImageView = .init()
-        let image = UIImage(systemName: "bicycle")?.withConfiguration(UIImage.SymbolConfiguration(font: .systemFont(ofSize: 15, weight: .regular))).withTintColor(.primaryBlack).withRenderingMode(.alwaysOriginal)
-        iconImageView.image = image
+        iconImageView.image = CustomImages.bicycleImage
     }
     
     private func configureStackView() {

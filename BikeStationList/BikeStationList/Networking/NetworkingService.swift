@@ -11,12 +11,9 @@ import RxSwift
 final class NetworkingService {
     
     func requestData<T: Decodable>(_ url: URL, httpMethod: HTTPMethod = .get) -> Observable<T> {
-//        guard let url else { return Observable.error(NetworkError.invalidURL) }
         return Observable.create { observer in
             var request = URLRequest(url: url)
             request.httpMethod = httpMethod.rawValue
-            
-//            let task = URLSession.shared.dataTask(with: url) { data, response, error in
             let task = URLSession.shared.dataTask(with: request) { data, response, error in
                 guard let data = data else {
                     observer.onError(NetworkError.noData)

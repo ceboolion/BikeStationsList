@@ -158,7 +158,7 @@ class MainMapView: UIView {
             .bind { [weak self] in
                 guard let data = self?.stationPlaceData else { return }
                 if let placeData = self?.viewModel.getPlaceDataWithDistance(from: self?.routeCoordinates.first?.coordinate,
-                                                                    to: self?.routeCoordinates.last?.coordinate,
+                                                                            to: self?.routeCoordinates.last?.coordinate,
                                                                             data: data) {
                     self?.eventClosure?(.showInfoSheet(placeData))
                 }

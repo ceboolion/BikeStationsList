@@ -10,7 +10,7 @@ import UIKit
 class BikeStationViewModel {
     
     func getAttributedText(for distance: String, addressText: String) -> NSAttributedString {
-        var finalText = NSMutableAttributedString()
+        let finalText = NSMutableAttributedString()
         let boldFontAttribute: [NSAttributedString.Key: Any] = [
             .font: UIFont(name: CustomFonts.manropeBold, size: 12)!,
             .foregroundColor: UIColor.primaryBlack
@@ -26,10 +26,10 @@ class BikeStationViewModel {
         if distance == "" {
             return address
         } else {
-            
+            finalText.addTexts(distanceToStation, spacerDot, address)
         }
-        finalText.addTexts(distanceToStation, spacerDot, address)
         return finalText
     }
+    
     
 }

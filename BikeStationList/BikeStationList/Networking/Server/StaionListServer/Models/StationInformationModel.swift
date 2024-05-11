@@ -32,14 +32,12 @@ struct StationInfo: Codable {
     let lon: Double?
     let isVirtualStation: Bool?
     let capacity: Int?
-//    let stationArea: StationArea?
     let rentalUris: RentalURIs?
     
     enum CodingKeys: String, CodingKey {
         case stationId = "station_id"
         case crossStreet = "cross_street"
         case isVirtualStation = "is_virtual_station"
-//        case stationArea = "station_area"
         case rentalUris = "rental_uris"
         case name, address, lat, lon, capacity
     }
@@ -47,7 +45,6 @@ struct StationInfo: Codable {
 
 struct StationArea: Codable {
     let type: String?
-//    let coordinates: [[Double]]?
     let coordinates: [[[Double]]]?
 }
 
