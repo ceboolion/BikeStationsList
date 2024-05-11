@@ -21,10 +21,12 @@ class MainMapView: UIView {
     private var routeCoordinates : [CLLocation] = []
     private var routeOverlay : MKOverlay?
     private var locationManager: CLLocationManager!
+    private var rectArea: MKMapRect?
     private var mapView: MKMapView!
     private var stationPlaceData: StationListModel?
     private var customAnnotationView: CustomAnnotationView!
     private var infoSheetButton: UIButton!
+    private var rectAreaButton: UIButton!
 
     // MARK: - INIT
     init(stationPlaceData: StationListModel) {
@@ -42,6 +44,7 @@ class MainMapView: UIView {
         configureLocationManager()
         configureMapView()
         configureInfoSheetButton()
+        configureAreaRectButton()
         configureConstraints()
         setupObservables()
         addCustomPin()
@@ -70,17 +73,33 @@ class MainMapView: UIView {
         infoSheetButton.addShadow()
     }
     
+    private func configureAreaRectButton() {
+        rectAreaButton = .init(type: .system)
+        rectAreaButton.setImage(CustomImages.rectAreaImage, for: .normal)
+        rectAreaButton.setImage(CustomImages.rectAreaImage, for: .highlighted)
+        rectAreaButton.setPreferredSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: 30), forImageIn: .normal)
+        rectAreaButton.addShadow()
+    }
+    
     private func configureConstraints() {
-        addSubviews(mapView, infoSheetButton)
+        addSubviews(mapView, infoSheetButton, rectAreaButton)
         
         mapView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
         
         infoSheetButton.snp.makeConstraints {
-            $0.bottom.trailing.equalTo(-30)
+            $0.bottom.equalTo(-30)
+            $0.trailing.equalTo(-20)
             $0.width.height.equalTo(50)
         }
+        
+        rectAreaButton.snp.makeConstraints {
+            $0.centerY.equalTo(infoSheetButton.snp.centerY)
+            $0.trailing.equalTo(infoSheetButton.snp.leading).offset(-5)
+            $0.width.height.equalTo(30)
+        }
+        
     }
     
     private func addCustomPin() {
@@ -139,16 +158,23 @@ class MainMapView: UIView {
             }
             let route = directionsResponse.routes[0]
             self?.mapView.addOverlay(route.polyline, level: .aboveRoads)
-            let rect = route.polyline.boundingMapRect
-            self?.mapView.setVisibleMapRect(rect,
-                                            edgePadding: UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset),
-                                            animated: true)
+            self?.rectArea = route.polyline.boundingMapRect
+            self?.setMapVisibleRect()
         }
+    }
+    
+    private func setMapVisibleRect() {
+        guard let rectArea else { return }
+        let inset: CGFloat = 80
+        mapView.setVisibleMapRect(rectArea,
+                                        edgePadding: UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset),
+                                        animated: true)
     }
     
     //MARK: - RX
     private func setupObservables() {
         bindInfoSheetButton()
+        bindRectAreaButton()
     }
     
     private func bindInfoSheetButton() {
@@ -162,6 +188,15 @@ class MainMapView: UIView {
                                                                             data: data) {
                     self?.eventClosure?(.showInfoSheet(placeData))
                 }
+            }
+            .disposed(by: viewModel.disposeBag)
+    }
+    
+    private func bindRectAreaButton() {
+        rectAreaButton
+            .rx
+            .tap.bind { [weak self] in
+                self?.setMapVisibleRect()
             }
             .disposed(by: viewModel.disposeBag)
     }
