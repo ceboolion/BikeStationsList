@@ -117,7 +117,7 @@ class MainMapView: UIView {
             print("No Coordinates to draw")
             return
         }
-        let inset: CGFloat = 60
+        let inset: CGFloat = 80
         guard let startPoint = routeData.first?.coordinate, let destination = routeData.last?.coordinate else { return }
         let start = viewModel.setLocationCoordinates(from: startPoint)
         let end = viewModel.setLocationCoordinates(from: destination)
