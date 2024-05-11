@@ -1,5 +1,5 @@
 //
-//  StationViewModel.swift
+//  MainViewModel.swift
 //  BikeStationList
 //
 //  Created by Ceboolion on 08/05/2024.
@@ -10,7 +10,7 @@ import RxSwift
 import RxCocoa
 import CoreLocation
 
-final class StationViewModel: BaseViewModel {
+final class MainViewModel: BaseViewModel {
     
     //MARK: - PRIVATE PROPERTIES
     private let isDataLoading: BehaviorRelay<Bool> = BehaviorRelay(value: false)
@@ -25,6 +25,7 @@ final class StationViewModel: BaseViewModel {
             }
         }
     }
+    
     var isSpinnerHiddenDriver: Driver<Bool> {
         isDataLoading
             .map { !$0 }
@@ -47,7 +48,7 @@ final class StationViewModel: BaseViewModel {
                  stationListServer.getStationsList(urlString: stationListDataUrl))
             .subscribe(onNext: { [weak self] statusData, listData in
                 self?.isDataLoading.accept(false)
-                self?.setDataList(with: statusData, stationListData: listData)
+                self?.setListData(with: statusData, stationListData: listData)
                 if let userLocation = self?.userLocation {
                     self?.setDistanceForEachStation(for: userLocation)
                 }
@@ -58,10 +59,16 @@ final class StationViewModel: BaseViewModel {
             .disposed(by: disposeBag)
     }
     
-    private func setDataList(with statusData: StationStatusModel, stationListData: StationInformationModel) {
-        var listData = [StationListModel]()
-        stationListData.data?.stations?.forEach({ data in
-            listData.append(StationListModel(stationId: data.stationId ?? "",
+    private func setListData(with statusData: StationStatusModel, stationListData: StationInformationModel) {
+        var listData = convertStationListData(from: stationListData)
+        listData = updateStationListData(with: statusData, dataToUpdate: listData)
+        self.stationListData.accept(listData)
+    }
+    
+    private func convertStationListData(from data: StationInformationModel) -> [StationListModel] {
+        var convertedData = [StationListModel]()
+        data.data?.stations?.forEach({ data in
+            convertedData.append(StationListModel(stationId: data.stationId ?? "",
                                              placeName: data.name ?? "",
                                              placeAddress: data.address ?? "",
                                              vehiclesAvailability: "",
@@ -69,14 +76,18 @@ final class StationViewModel: BaseViewModel {
                                              lat: data.lat ?? 0.0,
                                              lon: data.lon ?? 0.0))
         })
-        
-        statusData.data?.stations?.forEach({ statusData in
-            if let index = listData.firstIndex(where: {$0.stationId == statusData.stationId}) {
-                listData[index].vehiclesAvailability = statusData.numVehiclesAvailable?.description ?? ""
-                listData[index].placesAvailability = statusData.numDocksAvailable?.description ?? ""
+        return convertedData
+    }
+    
+    private func updateStationListData(with data: StationStatusModel, dataToUpdate: [StationListModel]) -> [StationListModel] {
+        var updatedData = dataToUpdate
+        data.data?.stations?.forEach({ statusData in
+            if let index = updatedData.firstIndex(where: {$0.stationId == statusData.stationId}) {
+                updatedData[index].vehiclesAvailability = statusData.numVehiclesAvailable?.description ?? ""
+                updatedData[index].placesAvailability = statusData.numDocksAvailable?.description ?? ""
             }
         })
-        self.stationListData.accept(listData)
+        return updatedData
     }
     
     private func setDistanceForEachStation(for userLocalization: CLLocation) {

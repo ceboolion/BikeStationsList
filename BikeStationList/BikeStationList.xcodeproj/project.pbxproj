@@ -26,7 +26,7 @@
 		081994482BEB85740023F4AE /* StationListServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081994472BEB85740023F4AE /* StationListServer.swift */; };
 		0819944A2BEB926D0023F4AE /* StationStatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081994492BEB926D0023F4AE /* StationStatusModel.swift */; };
 		0819944C2BEB941F0023F4AE /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0819944B2BEB941F0023F4AE /* HTTPMethod.swift */; };
-		0819944E2BEB956B0023F4AE /* StationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0819944D2BEB956B0023F4AE /* StationViewModel.swift */; };
+		0819944E2BEB956B0023F4AE /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0819944D2BEB956B0023F4AE /* MainViewModel.swift */; };
 		081994512BEB96270023F4AE /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081994502BEB96270023F4AE /* BaseViewModel.swift */; };
 		081994532BEB9E960023F4AE /* AvailabilityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081994522BEB9E960023F4AE /* AvailabilityView.swift */; };
 		081994562BEB9F6E0023F4AE /* AvailabilityViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081994552BEB9F6E0023F4AE /* AvailabilityViewType.swift */; };
@@ -92,7 +92,7 @@
 		081994472BEB85740023F4AE /* StationListServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationListServer.swift; sourceTree = "<group>"; };
 		081994492BEB926D0023F4AE /* StationStatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationStatusModel.swift; sourceTree = "<group>"; };
 		0819944B2BEB941F0023F4AE /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
-		0819944D2BEB956B0023F4AE /* StationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationViewModel.swift; sourceTree = "<group>"; };
+		0819944D2BEB956B0023F4AE /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		081994502BEB96270023F4AE /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		081994522BEB9E960023F4AE /* AvailabilityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailabilityView.swift; sourceTree = "<group>"; };
 		081994552BEB9F6E0023F4AE /* AvailabilityViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailabilityViewType.swift; sourceTree = "<group>"; };
@@ -296,7 +296,7 @@
 		081994362BEB7E100023F4AE /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				0819944D2BEB956B0023F4AE /* StationViewModel.swift */,
+				0819944D2BEB956B0023F4AE /* MainViewModel.swift */,
 				084B637D2BEEAD4700CE5166 /* BikeStationViewModel.swift */,
 			);
 			path = ViewModel;
@@ -699,7 +699,7 @@
 				081994582BEBA2C40023F4AE /* UIStackView+Ext.swift in Sources */,
 				08E0ED862BED630900DF9EF7 /* MainMapView.swift in Sources */,
 				081994622BEBA83F0023F4AE /* Helpers.swift in Sources */,
-				0819944E2BEB956B0023F4AE /* StationViewModel.swift in Sources */,
+				0819944E2BEB956B0023F4AE /* MainViewModel.swift in Sources */,
 				081994702BECB51F0023F4AE /* PlaceInformationController.swift in Sources */,
 				0819943D2BEB81BD0023F4AE /* StationInformationModel.swift in Sources */,
 				081994532BEB9E960023F4AE /* AvailabilityView.swift in Sources */,
@@ -910,6 +910,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BikeStationList/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = RentBike;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -940,6 +941,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BikeStationList/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = RentBike;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

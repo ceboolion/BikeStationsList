@@ -17,14 +17,14 @@ class StationsListView: UIView {
     var cellDidTappedClosure: ((StationListModel)->Void)?
     
     //MARK: - PRIVATE PROPERTIES
-    private var viewModel: StationViewModel!
+    private var viewModel: MainViewModel!
     private var locationManager: CLLocationManager!
     private var tableView: UITableView!
     private var spinnerView: UIActivityIndicatorView!
     private let padding: CGFloat = CustomProperties.defaultPadding
     
     // MARK: - INIT
-    init(viewModel: StationViewModel) {
+    init(viewModel: MainViewModel) {
         super.init(frame: .zero)
         self.viewModel = viewModel
         setup()

@@ -34,7 +34,7 @@ class MainController: UIViewController {
     }
     
     private func configureStationsListView() {
-        stationsListView = StationsListView(viewModel: StationViewModel())
+        stationsListView = StationsListView(viewModel: MainViewModel())
         stationsListView.didSendEventClosure = { [weak self] event in
             guard let self else { return }
             switch event {
