@@ -73,7 +73,7 @@ final class MainCoordinator: NSObject, Coordinator {
             guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else { return }
             if UIApplication.shared.canOpenURL(settingsUrl) {
                 UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
-                    print("Settings opened: \(success)") // Prints true
+                    print("Settings opened: \(success)")
                 })
             }
         }
